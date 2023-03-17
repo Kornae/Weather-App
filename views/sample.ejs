@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Search</title>
+      <link rel="icon" type="image/ico" href="images/cloud.ico">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,700;1,100&family=Sacramento&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+   
+
+   <div class="container">
+    <div class="card main-card">
+          <div class="card-body">
+            <div style="padding: 8px;" id="icon-wrap" class="center-div">
+              <img id="icon" src="<%=image%>" alt="" />
+              <h1 style="padding:10px" id="temp"><%=t%>° F</h1>
+              <h1 style="padding:10px" id="celc"><%=c%>° C</h1>
+            </div>
+
+            <h6 class="center-div" id="description" class="card-subtitle"><%=info%></h6>
+            <h1 id="location" style="padding:10px" class="card-title center-div"><%=location%></h1>
+
+            <div>
+              <h5 id="country" class="center-div"></h5>
+
+              <div class="row" style="padding:5px 10px 20px 10px">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="card small-cards">
+                    <i class="bi bi-moisture"></i>
+                    <h5 class="title center-div">
+                      <i class="ic fa-solid fa-sun"></i> UV Index
+                    </h5>
+                    <h6 id="uv" class="center-div" style="padding:10px"><%=uv%></h6>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="card small-cards">
+                    <h5 class="title center-div">
+                      <i class="ic fa-solid fa-droplet"></i>Humidity
+                    </h5>
+                    <h6 id="humidity" class="center-div" style="padding:10px"><%=humidity%>%</h6>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="card small-cards">
+                    <h5 class="title center-div">
+                      <i class="ic fa-solid fa-eye"></i>Visibility
+                    </h5>
+                    <h6 id="visibility" class="center-div" style="padding:10px"><%=visibility%> mi</h6>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="card small-cards">
+                    <h5 class="title center-div">
+                      <i class="ic fa-solid fa-wind"></i> Wind
+                    </h5>
+                    <h6 id="wind" class="center-div" style="padding:10px"><%=wind%> inHg</h6>
+                  </div>
+                </div>
+
+               <div class="center-div" id="search-bar" style="display: flex; ">
+          <div
+            class="form"
+            style="display: flex; justify-content: center; align-items: center"
+          >
+       <form action="/" method="post">
+            <input style="padding:10px; opacity:0.75"
+              id="new-search"
+              type="search"
+              name="cityName"
+              placeholder="Search"
+              class="form-control form-input"
+              required
+            />
+
+            <span class="search-icon left-pan n"
+              ><i class="glass fa-solid fa-magnifying-glass"></i
+            ></span>
+       </form>
+          </div>
+              </div>
+            </div>
+          </div>
+        </div>
+   </div>
+
+    <script
+      src="https://kit.fontawesome.com/9370e93401.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<script>
+    $('#celc').addClass('hidden');
+
+    $('#temp').click(function(){
+         $('#temp').addClass('hidden');
+         $('#celc').removeClass('hidden');
+    })
+
+      $('#celc').click(function(){
+         $('#temp').removeClass('hidden');
+         $('#celc').addClass('hidden');
+    })
+
+</script>
